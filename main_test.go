@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func TestAdd(t *testing.T) {
-	var expected int = 12
+	var expected int = 11
 
 	var actual int = Add(5, 6)
 

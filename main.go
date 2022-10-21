@@ -1,23 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"simple-app/database"
+	"simple-app/routes"
 
-func Add(a, b int) int {
-	return a + b
-}
+	"github.com/labstack/echo/v4"
+)
 
 func main() {
-	fmt.Println("simple calculator")
+	database.InitDB()
 
-	var a, b int
+	app := echo.New()
 
-	fmt.Print("enter first number: ")
+	routes.InitRoutes(app)
 
-	fmt.Scan(&a)
-
-	fmt.Print("enter second number: ")
-
-	fmt.Scan(&b)
-
-	fmt.Println("Result: ", Add(a, b))
+	app.Logger.Fatal(app.Start(":1323"))
 }

@@ -13,10 +13,10 @@ var DB *gorm.DB
 
 const (
 	DB_USERNAME = "root"
-	DB_PASSWORD = ""
-	DB_HOST     = "localhost"
+	DB_PASSWORD = "password"
+	DB_HOST     = "coba-mysql.internal"
 	DB_PORT     = "3306"
-	DB_NAME     = "simpleapp"
+	DB_NAME     = "dbku"
 )
 
 func InitDB() {

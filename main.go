@@ -1,11 +1,15 @@
 package main
 
 import (
+	"fmt"
+	"os"
 	"simple-app/database"
 	"simple-app/routes"
 
 	"github.com/labstack/echo/v4"
 )
+
+const DEFAULT_PORT = "8080"
 
 func main() {
 	database.InitDB()
@@ -14,5 +18,13 @@ func main() {
 
 	routes.InitRoutes(app)
 
-	app.Logger.Fatal(app.Start(":1323"))
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		port = DEFAULT_PORT
+	}
+
+	appPort := fmt.Sprintf(":%s", port)
+
+	app.Logger.Fatal(app.Start(appPort))
 }

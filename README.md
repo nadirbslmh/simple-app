@@ -69,25 +69,19 @@ kill_timeout = 5
 
 ```
 
-11. Lakukan scale up hingga 2 GB Karena MySQL versi 8 butuh resource yang lebih banyak.
-
-```sh
-fly scale memory 2048
-```
-
-12. Deploy aplikasi database MySQL.
+11. Deploy aplikasi database MySQL.
 
 ```sh
 fly deploy
 ```
 
-13. Lakukan perubahan pada bagian koneksi database. Contohnya dapat dilihat di file `database.go`.
+12. Lakukan perubahan pada bagian koneksi database. Contohnya dapat dilihat di file `database.go`.
 
-14. Lakukan perubahan juga di file `main.go`. Contohnya dapat dilihat di file `main.go`.
+13. Lakukan perubahan juga di file `main.go`. Contohnya dapat dilihat di file `main.go`.
 
-15. Persiapkan file untuk Docker yaitu `Dockerfile`.
+14. Persiapkan file untuk Docker yaitu `Dockerfile`.
 
-16. Lakukan deployment pada aplikasi Golang. Pastikan berada di directory aplikasi Golang yang akan di deploy.
+15. Lakukan deployment pada aplikasi Golang. Pastikan berada di directory aplikasi Golang yang akan di deploy.
 
 ```sh
 cd golangapp
@@ -95,8 +89,8 @@ cd golangapp
 flyctl launch
 ```
 
-17. Isi nama aplikasi, nama aplikasi bebas.
+16. Isi nama aplikasi, nama aplikasi bebas.
 
-18. Ketika ada pertanyaan mengenai database Postgre, ketik `N` karena database MySQL sudah digunakan.
+17. Ketika ada pertanyaan mengenai database Postgre, ketik `N` karena database MySQL sudah digunakan.
 
-19. Ketik `y` karena aplikasi siap untuk di deploy.
+18. Ketik `y` karena aplikasi siap untuk di deploy.
